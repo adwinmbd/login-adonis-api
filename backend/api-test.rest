@@ -1,0 +1,50 @@
+### GET API
+GET http://localhost:1000/ HTTP/1.1
+
+### GET all users
+GET http://localhost:1000/demo/users HTTP/1.1
+
+### Register user
+POST http://localhost:1000/api/register HTTP/1.1
+content-type: application/json
+
+{
+  "username": "kkkk",
+	"email": "kkkk@email.com",
+	"password": "kkkk"
+}
+
+### Login user
+POST http://localhost:1000/api/login HTTP/1.1
+content-type: application/json
+
+{
+	"email": "kkkk@email.com",
+  "password": "kkkk"
+}
+
+### Show authenticated user
+GET http://localhost:1000/api/auser HTTP/1.1
+Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+### Show admin secret
+GET http://localhost:1000/api/admin/secret HTTP/1.1
+Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+### Send password reset e-mail
+POST http://localhost:1000/api/password/email HTTP/1.1
+content-type: application/json
+
+{
+	"email": "dana@email.com"
+}
+
+### Update password
+PUT http://localhost:1000/api/password/reset HTTP/1.1
+content-type: application/json
+
+{
+	"token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "password" : "xxxx",
+  "password_confirmation" : "xxxxxxxxxx"
+}
